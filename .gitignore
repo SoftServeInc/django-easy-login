@@ -17,8 +17,6 @@ sdist/
 .pytest_cache
 .tox
 build/
-django_easy_login/
-test_app/
 db.sqlite3
-manage.py
 .idea/
+dev_settings.py
