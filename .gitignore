@@ -17,3 +17,6 @@ sdist/
 .pytest_cache
 .tox
 build/
+db.sqlite3
+.idea/
+dev_settings.py
