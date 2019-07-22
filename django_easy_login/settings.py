@@ -49,7 +49,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'easy_login.middleware.ShowPanelMiddleware',
 ]
 
 ROOT_URLCONF = 'django_easy_login.urls'
@@ -65,14 +64,13 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'easy_login.context_processors.easy_login'
             ],
         },
     },
 ]
 
 WSGI_APPLICATION = 'django_easy_login.wsgi.application'
-
-
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
@@ -121,6 +119,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+EASY_URL_REDIRECT = 'test-app:index'
 
 try:
     from django_easy_login.dev_settings import *
