@@ -7,11 +7,11 @@ from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404
 
-from easy_login.forms import SwitchUserForm
+from easy_login.forms import EasyLoginForm
 
 
 class EasyLoginView(View):
-    form_class = SwitchUserForm
+    form_class = EasyLoginForm
 
     def post(self, request, *args, **kwargs):
         form = self.form_class(request.POST)

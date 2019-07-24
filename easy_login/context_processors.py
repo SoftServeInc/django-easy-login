@@ -1,5 +1,5 @@
 from django.apps import apps
-from easy_login.forms import SwitchUserForm
+from easy_login.forms import EasyLoginForm
 from django.template.context_processors import csrf
 from django.template.loader import render_to_string
 from django.template import TemplateSyntaxError
@@ -9,7 +9,7 @@ from django.core.exceptions import ImproperlyConfigured
 def easy_login(request):
     context = {}
     context.update(csrf(request))
-    context['form'] = SwitchUserForm()
+    context['form'] = EasyLoginForm()
     context['current_user'] = request.user
 
     try:
