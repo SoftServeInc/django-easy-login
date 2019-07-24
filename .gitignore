@@ -20,3 +20,6 @@ build/
 db.sqlite3
 .idea/
 dev_settings.py
+
+env/
+venv/
