@@ -13,7 +13,7 @@ def easy_login(request):
     context['current_user'] = request.user
 
     try:
-        render_page = render_to_string("base.html", context)
+        render_page = render_to_string("easy_login_form.html", context)
 
     except TemplateSyntaxError:
         if not apps.is_installed("django.contrib.staticfiles"):

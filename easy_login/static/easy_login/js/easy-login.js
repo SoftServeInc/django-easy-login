@@ -1,10 +1,16 @@
-$(document).ready(function(){
-    $(".easy-login-flex-1").click(function(){
-        $(".easy-login-flex-2").fadeToggle("slow");
-        $(".easy-login-flex-3").fadeToggle("slow");
-    });
+function myFunction() {
+    var elements = document.getElementsByClassName("easy-login-toggle");
+    for (var i = 0, l = elements.length; i < l; i++) {
+        var obj = elements[i];
+        if (obj.style.display === "none") {
+            obj.style.display = "";
+        } else {
+            obj.style.display = "none";
+        }
+    }
+}
 
-    $('#id_user_name').on('change', function() {
-         $("#easy-login-form" ).submit();
-    });
-});
+
+document.getElementById('id_user_name').onchange = function() {
+    document.getElementById('easy-login-form').submit();
+};
