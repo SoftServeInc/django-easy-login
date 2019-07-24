@@ -16,4 +16,4 @@ class SwitchUserForm(forms.Form):
         user_id = cleaned_data.get("user_id")
 
         if not any([user_name, user_id]):
-            raise forms.ValidationError("Please provide parameter user or id.")
+            raise forms.ValidationError("Please provide parameter user_name or user_id.")
