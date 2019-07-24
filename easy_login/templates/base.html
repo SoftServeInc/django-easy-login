@@ -1,5 +1,25 @@
-<form action="{% url 'easy-login:easy-login-change' %}" method="post">
+{% load i18n %}{% load static %}
+<link rel="stylesheet" href="{% static 'easy_login/css/main.css' %}" type="text/css">
+<form id="easy-login-form" action="{% url 'easy-login:easy-login-change' %}" method="post">
     {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Submit">
+    <p class="easy-login-detail-info">Current User: {{ current_user.username }} - ID: {{ current_user.id }}</p>
+    <div class="easy-login-flex-container">
+        <div class="easy-login-flex-1">
+            <img alt="User" src="{% static 'easy_login/icons/user.svg' %}" height="34" width="34">
+        </div>
+        <div class="easy-login-flex-2">
+            {{ form.user_name }}
+            <p>or by</p>
+            {{ form.user_id }}
+        </div>
+        <div class="easy-login-flex-3">
+            <input type="submit" value="Login">
+        </div>
+    </div>
 </form>
+<script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous">
+</script>
+<script src="{% static 'easy_login/js/easy-login.js' %}"></script>

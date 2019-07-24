@@ -2,9 +2,18 @@ from django import forms
 from django.contrib.auth.models import User
 
 
-class SwitchUserForm(forms. Form):
-    user = forms.ModelChoiceField(queryset=User.objects.none())
+class SwitchUserForm(forms.Form):
+    user_name = forms.ModelChoiceField(queryset=User.objects.none(), required=False)
+    user_id = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder': 'ID'}))
 
     def __init__(self, *args, **kwargs):
         super(SwitchUserForm, self).__init__(*args, **kwargs)
-        self.fields['user'].queryset = User.objects.all()
+        self.fields['user_name'].queryset = User.objects.all()
+
+    def clean(self):
+        cleaned_data = super(SwitchUserForm, self).clean()
+        user_name = cleaned_data.get("user_name")
+        user_id = cleaned_data.get("user_id")
+
+        if not any([user_name, user_id]):
+            raise forms.ValidationError("Please provide parameter user or id.")
