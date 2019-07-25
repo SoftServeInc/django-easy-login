@@ -10,8 +10,9 @@
 
 .easy-login-detail-info {
     position: fixed;
-    bottom: 35px;
-    left: 0;
+    bottom: 0;
+    left: 382px;
+    margin: 0;
 }
 
 .easy-login-flex-1 {
@@ -50,6 +51,6 @@
     height: 34px;
     width: 90px;
     cursor: pointer;
-    display: block;
+    /*display: block;*/
 }
 
