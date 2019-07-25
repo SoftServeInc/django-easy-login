@@ -1,4 +1,4 @@
-function myFunction() {
+function ToggleEasyLoginMenu() {
     var elements = document.getElementsByClassName("easy-login-toggle");
     for (var i = 0, l = elements.length; i < l; i++) {
         var obj = elements[i];

@@ -4,7 +4,7 @@
     <p class="easy-login-detail-info">Current User: {{ current_user.username }} - ID: {{ current_user.id }}</p>
     <div class="easy-login-flex-container">
         <div class="" id="easy-login-icon">
-            <img onclick="myFunction()" alt="User" src="{% static 'easy_login/icons/user.svg' %}" height="34" width="34">
+            <img onclick="ToggleEasyLoginMenu()" alt="User" src="{% static 'easy_login/icons/user.svg' %}" height="34" width="34">
         </div>
             <div class="easy-login-flex-2 easy-login-toggle">
                 {{ form.user_name }}
