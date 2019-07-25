@@ -7,13 +7,18 @@ from django.core.exceptions import ImproperlyConfigured
 
 
 def easy_login(request):
+    """
+    Context processor function. Easy logic will be available via variable {{ easy_login }} in templates.
+    :param request: request
+    :return: string
+    """
     context = {}
     context.update(csrf(request))
     context['form'] = EasyLoginForm()
     context['current_user'] = request.user
 
     try:
-        render_page = render_to_string("base.html", context)
+        render_page = render_to_string("easy_login_form.html", context)
 
     except TemplateSyntaxError:
         if not apps.is_installed("django.contrib.staticfiles"):

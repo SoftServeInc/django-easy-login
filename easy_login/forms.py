@@ -11,6 +11,10 @@ class EasyLoginForm(forms.Form):
         self.fields['user_name'].queryset = User.objects.all()
 
     def clean(self):
+        """
+        Validation if one from two params present in request.
+        :return:
+        """
         cleaned_data = super(EasyLoginForm, self).clean()
         user_name = cleaned_data.get("user_name")
         user_id = cleaned_data.get("user_id")

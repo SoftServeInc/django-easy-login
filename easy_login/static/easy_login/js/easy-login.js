@@ -1,10 +1,19 @@
-$(document).ready(function(){
-    $(".easy-login-flex-1").click(function(){
-        $(".easy-login-flex-2").fadeToggle("slow");
-        $(".easy-login-flex-3").fadeToggle("slow");
-    });
+function ToggleEasyLoginMenu() {
+    var toggleClassNames = ['easy-login-detail-info', 'easy-login-toggle'];
+    toggleClassNames.forEach(function (className, index) {
+        var elements = document.getElementsByClassName(className);
+        for (var i = 0, l = elements.length; i < l; i++) {
+            var obj = elements[i];
+            if (obj.style.display === "none") {
+                obj.style.display = "";
+            } else {
+                obj.style.display = "none";
+            }
+        }
+        });
+}
 
-    $('#id_user_name').on('change', function() {
-         $("#easy-login-form" ).submit();
-    });
-});
+
+document.getElementById('id_user_name').onchange = function() {
+    document.getElementById('easy-login-form').submit();
+};

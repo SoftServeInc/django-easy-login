@@ -4,14 +4,15 @@
     justify-content: space-between;
     bottom: 0;
     left: 0;
-    min-width: 400px;
+    min-width: 380px;
     height: 34px;
 }
 
 .easy-login-detail-info {
     position: fixed;
-    bottom: 35px;
-    left: 0;
+    bottom: 0;
+    left: 382px;
+    margin: 0;
 }
 
 .easy-login-flex-1 {
