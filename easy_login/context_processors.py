@@ -7,6 +7,11 @@ from django.core.exceptions import ImproperlyConfigured
 
 
 def easy_login(request):
+    """
+    Context processor function. Easy logic will be available via variable {{ easy_login }} in templates.
+    :param request: request
+    :return: string
+    """
     context = {}
     context.update(csrf(request))
     context['form'] = EasyLoginForm()
