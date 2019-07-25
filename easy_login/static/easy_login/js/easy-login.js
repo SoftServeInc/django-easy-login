@@ -1,7 +1,7 @@
 function ToggleEasyLoginMenu() {
     var toggleClassNames = ['easy-login-detail-info', 'easy-login-toggle'];
-    toggleClassNames.forEach(function (itemName, index) {
-        var elements = document.getElementsByClassName(itemName);
+    toggleClassNames.forEach(function (className, index) {
+        var elements = document.getElementsByClassName(className);
         for (var i = 0, l = elements.length; i < l; i++) {
             var obj = elements[i];
             if (obj.style.display === "none") {
