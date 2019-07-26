@@ -1,5 +1,4 @@
-{% load i18n %}{% load static %}
-<form id="easy-login-form" action="{% url 'easy-login:easy-login-change' %}" method="post">
+<form action="{% url 'easy-login:easy-login-change' %}" method="post">
     {% csrf_token %}
     <div class="easy-login-flex-container">
         <div class="" id="easy-login-icon">
