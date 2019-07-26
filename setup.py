@@ -11,7 +11,7 @@ files_to_exclude = ['.gitignore']
 
 setup(
     name='django-easy-login',
-    version='0.1dev',
+    version='0.1dev2',
     packages=find_packages(exclude=files_to_exclude),
     include_package_data=True,
 
