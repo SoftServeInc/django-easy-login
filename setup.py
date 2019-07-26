@@ -1,4 +1,5 @@
 import os
+
 from setuptools import find_packages, setup
 
 with open(os.path.join(os.path.dirname(__file__), 'README.rst')) as readme:
@@ -9,12 +10,15 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 files_to_exclude = ['.gitignore']
 
+name = "django-easy-login"
+version = "0.1.dev2"
+release = "0.0.1"
+
 setup(
-    name='django-easy-login',
-    version='0.1dev2',
+    name=name,
+    version=version,
     packages=find_packages(exclude=files_to_exclude),
     include_package_data=True,
-
     install_requires=['Django==1.11.22', 'pytz==2019.1'],
 
     license='MIT License',  # example license
