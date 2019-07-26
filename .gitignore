@@ -23,3 +23,5 @@ dev_settings.py
 
 env/
 venv/
+
+docs/_build

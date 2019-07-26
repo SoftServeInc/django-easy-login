@@ -1,0 +1,55 @@
+.easy-login-flex-container {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    bottom: 0;
+    left: 0;
+    min-width: 380px;
+    height: 34px;
+}
+
+.easy-login-detail-info {
+    position: fixed;
+    bottom: 0;
+    left: 382px;
+    margin: 0;
+}
+
+.easy-login-flex-1 {
+    height: 34px;
+}
+
+.easy-login-flex-2 select {
+    border: 1px solid #ccc;
+    font-size: 16px;
+    height: 34px;
+    width: 150px;
+}
+.easy-login-flex-2 {
+    display: flex;
+}
+
+.easy-login-flex-2 input{
+    border: 1px solid #ccc;
+    font-size: 16px;
+    height: 30px;
+    border-radius: 5px;
+    width: 50px;
+}
+
+.easy-login-flex-2 p {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.easy-login-flex-3 input {
+    border-radius: 5px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+    height: 34px;
+    width: 90px;
+    cursor: pointer;
+}
+
