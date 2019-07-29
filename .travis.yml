@@ -4,7 +4,6 @@ python:
 install: "pip install -r requirements.txt"
 before_install:
     - pip install --upgrade pip
-    - pip install --upgrade pytest pytest-cov
 script:
     - python manage.py migrate
-    - pytest easy_login/tests.py
+    - python manage.py test
