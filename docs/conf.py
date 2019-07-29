@@ -12,11 +12,24 @@
 #
 import os
 import sys
-import django
-sys.path.insert(0, os.path.abspath('..'))
-os.environ['DJANGO_SETTINGS_MODULE'] = 'django_easy_login.settings'
-django.setup()
 
+import django
+from django.conf import settings
+
+sys.path.insert(0, os.path.abspath('..'))
+
+settings.configure(
+    INSTALLED_APPS=[
+            'django.contrib.admin',
+            'django.contrib.auth',
+            'django.contrib.contenttypes',
+            'django.contrib.sessions',
+            'django.contrib.messages',
+            'django.contrib.staticfiles',
+            'easy_login',
+        ]
+)
+django.setup()
 
 # -- Project information -----------------------------------------------------
 

@@ -6,6 +6,8 @@
 Welcome to django-easy-login's documentation!
 =============================================
 
+.. include:: ../README.rst
+
 .. toctree::
    :maxdepth: 1
    :caption: Contents:
