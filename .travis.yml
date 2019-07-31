@@ -7,5 +7,4 @@ install:
 before_install:
     - pip install --upgrade pip
 script:
-    - python easy_login/tests/manage.py migrate
     - python easy_login/tests/manage.py test
