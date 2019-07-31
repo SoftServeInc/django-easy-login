@@ -29,4 +29,5 @@ def easy_login(request):
             )
         else:
             raise
+
     return {"easy_login": render_page}
