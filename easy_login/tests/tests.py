@@ -13,9 +13,15 @@ class EasyLoginTest(TestCase):
     def setUp(self):
         self.factory = RequestFactory()
 
+        self.admin_username = "Admin"
+        self.admin_password = "admin"
+
+        self.user_1_username = "User_1"
+        self.user_1_password = "user1"
+
         self.admin = User.objects.create_user(
-            username='Admin',
-            password='admin',
+            username=self.admin_username,
+            password=self.admin_password,
             email='admin@adm.com',
             is_superuser=True,
             is_staff=True
@@ -61,17 +67,44 @@ class EasyLoginTest(TestCase):
 
     def test_form(self):
         client = Client()
-        client.login(username='Admin', password='admin')
-        response = client.post(
+        client.login(username=self.admin_username, password=self.admin_password)
+
+        response = client.get('/test_app/')
+        soup = BeautifulSoup(response.content, features="html.parser")
+        search_compile = re.compile('Current User: (.*) - ID:.*')
+        user_name = soup.find('p', text=search_compile)
+        user_name = re.findall(search_compile, user_name.text)[0] if user_name else None
+
+        self.assertEqual('Admin', user_name)
+
+        client.post(
             '/easy_login/easy_login_change/',
             {
-                'user_name': self.user_1.id,
+                'user_name': '',
+                'user_id': self.user_1.id
+            }
+        )
+
+        response = client.get('/test_app/')
+        soup = BeautifulSoup(response.content, features="html.parser")
+        search_compile = re.compile('Current User: (.*) - ID:.*')
+        user_name = soup.find('p', text=search_compile)
+        user_name = re.findall(search_compile, user_name.text)[0] if user_name else None
+
+        self.assertEqual(self.user_1_username, user_name)
+
+        client.post(
+            '/easy_login/easy_login_change/',
+            {
+                'user_name': self.admin.id,
                 'user_id': ''
             }
         )
 
-        print(response.cookies)
+        response = client.get('/test_app/')
+        soup = BeautifulSoup(response.content, features="html.parser")
+        search_compile = re.compile('Current User: (.*) - ID:.*')
+        user_name = soup.find('p', text=search_compile)
+        user_name = re.findall(search_compile, user_name.text)[0] if user_name else None
 
-        print(response)
-        print(response.content)
-        self.assertTrue(True)
+        self.assertEqual(self.admin_username, user_name)
