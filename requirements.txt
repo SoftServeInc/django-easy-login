@@ -2,3 +2,4 @@ Django==1.11.22
 pytz==2019.1
 Sphinx
 bs4==0.0.1
+twine==1.13.0
