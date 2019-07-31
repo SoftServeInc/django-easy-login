@@ -11,6 +11,9 @@ from easy_login.forms import EasyLoginForm
 
 
 class EasyLoginView(View):
+    """
+    Easy login view for switch user without credentials
+    """
     form_class = EasyLoginForm
 
     def post(self, request, *args, **kwargs):

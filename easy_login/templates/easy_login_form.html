@@ -1,0 +1,20 @@
+{% load i18n %}{% load static %}
+<form id="easy-login-form" action="{% url 'easy-login:easy-login-change' %}" method="post">
+    {% csrf_token %}
+    <div class="easy-login-flex-container">
+        <div class="" id="easy-login-icon">
+            <img onclick="ToggleEasyLoginMenu()" alt="User" src="{% static 'easy_login/icons/user.svg' %}" height="34" width="34">
+        </div>
+            <div class="easy-login-flex-2 easy-login-toggle">
+                {{ form.user_name }}
+                <p>or by</p>
+                {{ form.user_id }}
+            </div>
+            <div class="easy-login-flex-3 easy-login-toggle">
+                <input type="submit" value="Login">
+            </div>
+        </div>
+    <p class="easy-login-detail-info">Current User: {{ current_user.username }} - ID: {{ current_user.id }}</p>
+</form>
+<link rel="stylesheet" href="{% static 'easy_login/css/main.css' %}" type="text/css">
+<script src="{% static 'easy_login/js/easy-login.js' %}"></script>
