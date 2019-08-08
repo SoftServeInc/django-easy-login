@@ -1,0 +1,10 @@
+language: python
+python:
+  - "3.4"
+install:
+    - "pip install -r requirements.txt"
+    - "pip install -r easy_login/tests/requirements.txt"
+before_install:
+    - pip install --upgrade pip
+script:
+    - python easy_login/tests/manage.py test
