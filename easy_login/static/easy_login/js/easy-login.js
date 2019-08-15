@@ -27,7 +27,7 @@ Element.prototype.toggleClass = function(className) {
     }
 };
 var EasyLogin = {};
-EasyLogin.on_image_click = function() {
+EasyLogin.onImageClick = function() {
     var elem = document.getElementById("easy_login_box");
     elem.toggleClass("hidden_box");
     elem.toggleClass("visible_box");

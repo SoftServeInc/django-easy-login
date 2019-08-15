@@ -2,7 +2,7 @@
 <div id='easy_login' class="easy_login_bottom_left">
   <form method="post" action="{% url 'easy-login:easy-login-change' %}" id="easy_login_form">
       {% csrf_token %}
-      <img onclick="EasyLogin.on_image_click()" alt="User" src="{% static 'easy_login/icons/user.svg' %}">
+      <img onclick="EasyLogin.onImageClick()" alt="User" src="{% static 'easy_login/icons/user.svg' %}">
     <span id='easy_login_box' class='visible_box'>
         {{ form.user_name }}
       or by

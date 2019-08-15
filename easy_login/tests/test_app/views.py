@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from django.views.generic.base import TemplateView, View
+from django.views.generic.base import TemplateView
 
 
 class ViewHome(TemplateView):
