@@ -19,5 +19,5 @@ class EasyLoginForm(forms.Form):
         user_name = cleaned_data.get("user_name")
         user_id = cleaned_data.get("user_id")
 
-        if not any([user_name, user_id]):
+        if not any([user_name, user_id]):  # pragma: no cover
             raise forms.ValidationError("Please provide parameter user_name or user_id.")

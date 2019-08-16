@@ -20,7 +20,7 @@ def easy_login(request):
     try:
         render_page = render_to_string("easy_login_form.html", context)
 
-    except TemplateSyntaxError:
+    except TemplateSyntaxError:  # pragma: no cover
         if not apps.is_installed("django.contrib.staticfiles"):
             raise ImproperlyConfigured(
                 "The easy-login requires the staticfiles contrib app. "

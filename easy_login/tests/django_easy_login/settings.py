@@ -27,7 +27,7 @@ sys.path.insert(0, BASE_DIR)
 SECRET_KEY = 'test_key'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 

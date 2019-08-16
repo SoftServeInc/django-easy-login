@@ -1,55 +1,110 @@
-.easy-login-flex-container {
-    position: fixed;
-    display: flex;
-    justify-content: space-between;
-    bottom: 0;
-    left: 0;
-    min-width: 380px;
-    height: 34px;
+#easy_login {
+	position: fixed;
+	opacity: 0.5;
+	background: #45834b;
+	color: white;
+	font-size: 16px;
+	line-height: 20px;
+	z-index: 10000;
 }
 
-.easy-login-detail-info {
-    position: fixed;
-    bottom: 0;
-    left: 382px;
-    margin: 0;
+#easy_login form {
+	padding: 0;
+	margin: 0;
+	height: auto;
 }
 
-.easy-login-flex-1 {
-    height: 34px;
+#easy_login input,
+#easy_login select {
+	color: black;
+	padding: 0;
+	margin: 0;
+	height: auto;
+	float: none;
+	text-decoration: none;
+	position: unset;
+	left: auto;
+	top: auto;
+	font-size: auto;
+	line-height: auto;
 }
 
-.easy-login-flex-2 select {
-    border: 1px solid #ccc;
-    font-size: 16px;
-    height: 34px;
-    width: 150px;
-}
-.easy-login-flex-2 {
-    display: flex;
+#easy_login .hidden_box {
+	display: none;
 }
 
-.easy-login-flex-2 input{
-    border: 1px solid #ccc;
-    font-size: 16px;
-    height: 30px;
-    border-radius: 5px;
-    width: 50px;
+#easy_login .visible_box {
+	display: inline;
 }
 
-.easy-login-flex-2 p {
-    margin-left: 5px;
-    margin-right: 5px;
+#easy_login.easy_login_top_left {
+	top: 0;
+	left: 0;
 }
 
-.easy-login-flex-3 input {
-    border-radius: 5px;
-    font-size: 16px;
-    color: #fff;
-    background-color: #6c757d;
-    border-color: #6c757d;
-    height: 34px;
-    width: 90px;
-    cursor: pointer;
+#easy_login.easy_login_top_right {
+	top: 0;
+	right: 0;
 }
 
+#easy_login.easy_login_bottom_left {
+	bottom: 0;
+	left: 0;
+}
+
+#easy_login.easy_login_bottom_right {
+	bottom: 0;
+	right: 0;
+}
+
+#easy_login.easy_login_visible {
+	opacity: 1;
+}
+
+#easy_login img {
+	cursor: pointer;
+	width: 20px;
+	height: 20px;
+	margin: 4px;
+	vertical-align: middle;
+}
+
+#easy_login:hover {
+	opacity: 1;
+}
+
+#easy_login form {
+	padding: 4px 6px;
+}
+
+#easy_login span {
+	display: none;
+	vertical-align: middle;
+}
+
+#easy_login.easy_login_auto_show span {
+	display: inline;
+}
+
+#easy_login .easy_login_user_information {
+	padding-left: 10px;
+	color: yellow;
+}
+
+#easy_login #easy_login_id_input {
+	width: 30px;
+}
+
+#easy_login span#current_user_information {
+	display: inline;
+}
+
+#easy_login span#current_user_information span {
+	display: inline;
+}
+
+#easy_login span#easy_login_back_to_user {
+	padding-left: 15px;
+	color: cyan;
+	display: inline;
+}

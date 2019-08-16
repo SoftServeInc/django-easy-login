@@ -60,7 +60,7 @@ class EasyLoginTest(TestCase):
             response = easy_login(request)
             soup = BeautifulSoup(response['easy_login'], features="html.parser")
             search_compile = re.compile('Current User: (.*) - ID:.*')
-            user_name = soup.find('p', text=search_compile)
+            user_name = soup.find('span', text=search_compile)
             user_name = re.findall(search_compile, user_name.text)[0] if user_name else None
             self.assertEqual(request.user.username, user_name)
 
@@ -73,7 +73,7 @@ class EasyLoginTest(TestCase):
         response = client.get(reverse_lazy('test-app:index'))
         soup = BeautifulSoup(response.content, features="html.parser")
         search_compile = re.compile('Current User: (.*) - ID:.*')
-        user_name = soup.find('p', text=search_compile)
+        user_name = soup.find('span', text=search_compile)
         user_name = re.findall(search_compile, user_name.text)[0] if user_name else None
         self.assertEqual(admin.username, user_name)
 
@@ -89,7 +89,7 @@ class EasyLoginTest(TestCase):
         response = client.get(reverse_lazy('test-app:index'))
         soup = BeautifulSoup(response.content, features="html.parser")
         search_compile = re.compile('Current User: (.*) - ID:.*')
-        user_name = soup.find('p', text=search_compile)
+        user_name = soup.find('span', text=search_compile)
         user_name = re.findall(search_compile, user_name.text)[0] if user_name else None
 
         self.assertEqual(user_1.username, user_name)
@@ -105,7 +105,7 @@ class EasyLoginTest(TestCase):
         response = client.get(reverse_lazy('test-app:index'))
         soup = BeautifulSoup(response.content, features="html.parser")
         search_compile = re.compile('Current User: (.*) - ID:.*')
-        user_name = soup.find('p', text=search_compile)
+        user_name = soup.find('span', text=search_compile)
         user_name = re.findall(search_compile, user_name.text)[0] if user_name else None
 
         self.assertEqual(admin.username, user_name)
