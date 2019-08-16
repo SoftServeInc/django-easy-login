@@ -126,6 +126,18 @@ STATIC_URL = '/static/'
 
 EASY_URL_REDIRECT = 'test-app:index'
 
+# EASY_LOGIN_SETTINGS = {
+#     # 'FILTER': {'is_staff': True},
+#     'LIMIT': None,
+#     'LABELS': ['id', 'username'],
+#     # 'LOGIN_BY': '',
+#     'GET_BY': 'username',
+#     'LOGIN_BUTTON': 'Autorize'
+# }
+
+# AUTH_USER_MODEL = 'test_app.User'
+
+
 try:
     from django_easy_login.dev_settings import *
 except ImportError:

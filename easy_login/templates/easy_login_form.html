@@ -4,10 +4,18 @@
       {% csrf_token %}
       <img onclick="EasyLogin.onImageClick()" alt="User" src="{% static 'easy_login/icons/user.svg' %}">
     <span id='easy_login_box' class='visible_box'>
-        {{ form.user_name }}
-      or by
-        {{ form.user_id }}
-        <input type="submit" value="Login">
+        {%  if form.login_by == 'both' %}
+            {{ form.user_name }}
+            or by
+            {{ form.user_id }}
+        {% elif form.login_by == 'select' %}
+            {{ form.user_name }}
+        {% elif form.login_by == 'id' %}
+            {{ form.user_id }}
+        {% endif %}
+        {% if form.login_by in 'both,id' %}
+        <input type="submit" value={{ form.login_button }}>
+        {% endif %}
       <span id='current_user_information'>Current User: {{ current_user }} - ID: {{ current_user.id }}</span>
     </span>
   </form>
