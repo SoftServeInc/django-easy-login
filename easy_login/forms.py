@@ -40,7 +40,6 @@ class EasyLoginForm(forms.Form):
     user_id = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder': placeholder}))
     login_by = view_settings['LOGIN_BY']
     login_button = view_settings['LOGIN_BUTTON']
-    print(login_button)
 
     def __init__(self, *args, **kwargs):
         super(EasyLoginForm, self).__init__(*args, **kwargs)
