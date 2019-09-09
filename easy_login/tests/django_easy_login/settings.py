@@ -129,12 +129,12 @@ EASY_URL_REDIRECT = 'test-app:index'
 
 
 # EASY_LOGIN_SETTINGS = {
-    # 'FILTER': {'is_staff': True},
-    # 'LIMIT': None,
-    # 'LABELS': ['username', 'id'],
-    # 'LOGIN_BY': 'both',
-    # 'GET_BY': 'username',
-    # 'LOGIN_BUTTON': 'JUST DO IT!'
+#     'FILTER': {'is_staff': True},
+#     'LIMIT': None,
+#     'LABELS': ['username', 'id'],
+#     'LOGIN_BY': 'both',
+#     'GET_BY': 'username',
+#     'LOGIN_BUTTON': 'JUST DO IT!'
 # }
 
 # AUTH_USER_MODEL = 'test_app.User'
