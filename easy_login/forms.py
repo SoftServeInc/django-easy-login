@@ -22,12 +22,12 @@ class MyModelChoiceField(forms.ModelChoiceField):
         """
         Updated function to show labels according to the settings
         """
-        if type(view_settings['LABELS']) is list:
+        if view_settings['LABELS'] and type(view_settings['LABELS']) is list:
             labels = []
             for attr in view_settings['LABELS']:
                 labels.append(str(getattr(obj, attr)))
             label = ', '.join(labels)
-        elif type(view_settings['LABELS']) is function:
+        elif callable(view_settings['LABELS']):
             label = view_settings['LABELS'](obj)
         else:
             label = obj
@@ -40,6 +40,7 @@ class EasyLoginForm(forms.Form):
     user_id = forms.CharField(required=False, widget=forms.TextInput(attrs={'placeholder': placeholder}))
     login_by = view_settings['LOGIN_BY']
     login_button = view_settings['LOGIN_BUTTON']
+    print(login_button)
 
     def __init__(self, *args, **kwargs):
         super(EasyLoginForm, self).__init__(*args, **kwargs)
