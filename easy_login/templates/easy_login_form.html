@@ -14,7 +14,7 @@
             {{ form.user_id }}
         {% endif %}
         {% if form.login_by in 'both,id' %}
-        <input type="submit" value={{ form.login_button }}>
+        <input type="submit" value="{{ form.login_button }}">
         {% endif %}
       <span id='current_user_information'>Current User: {{ current_user }} - ID: {{ current_user.id }}</span>
     </span>

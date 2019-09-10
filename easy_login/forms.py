@@ -22,11 +22,13 @@ class MyModelChoiceField(forms.ModelChoiceField):
         """
         Updated function to show labels according to the settings
         """
-        if view_settings['LABELS']:
+        if view_settings['LABELS'] and type(view_settings['LABELS']) is list:
             labels = []
             for attr in view_settings['LABELS']:
                 labels.append(str(getattr(obj, attr)))
             label = ', '.join(labels)
+        elif callable(view_settings['LABELS']):
+            label = view_settings['LABELS'](obj)
         else:
             label = obj
         return '{}'.format(label)

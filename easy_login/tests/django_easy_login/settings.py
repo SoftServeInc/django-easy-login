@@ -126,13 +126,15 @@ STATIC_URL = '/static/'
 
 EASY_URL_REDIRECT = 'test-app:index'
 
+
+
 # EASY_LOGIN_SETTINGS = {
-#     # 'FILTER': {'is_staff': True},
+#     'FILTER': {'is_staff': True},
 #     'LIMIT': None,
-#     'LABELS': ['id', 'username'],
-#     # 'LOGIN_BY': '',
+#     'LABELS': ['username', 'id'],
+#     'LOGIN_BY': 'both',
 #     'GET_BY': 'username',
-#     'LOGIN_BUTTON': 'Autorize'
+#     'LOGIN_BUTTON': 'JUST DO IT!'
 # }
 
 # AUTH_USER_MODEL = 'test_app.User'

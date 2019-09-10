@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
-from django.views.generic.base import TemplateView
+from django.shortcuts import render
+from django.views.generic.base import View
 
 
-class ViewHome(TemplateView):
-    template_name = 'home.html'
+class ViewHome(View):
+    def get(self, request, *args, **kwargs):
+        context = {'current_user': request.user}
+        return render(request, "home.html", context=context)
