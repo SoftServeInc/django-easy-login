@@ -19,7 +19,7 @@ setup(
     version=version,
     packages=find_packages(exclude=files_to_exclude),
     include_package_data=True,
-    install_requires=['Django==1.11.22', 'pytz==2019.1'],
+    install_requires=['Django==1.11.28', 'pytz==2019.1'],
 
     license='MIT License',  # example license
     description='A simple Django app to switch between users without authentication.',
